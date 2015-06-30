@@ -1,6 +1,78 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "compass/reset";
+
+
+/*
+ * Variables: 
+ *  colors: $primary, $pop, $pop2 $neutral, $darkneutral, $lightneutral
+ *
+ *
+ */
+
+
+/*
+ * Main layout stuff
+ */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Merriweather', Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* display on large screen only? */
+#header {
+	display: hidden; 
+}
+
+#content {
+    padding: 2em;
+    float: right;
+    display: block;
+}
+
+#sidebar {
+    padding: 2em;
+    float: left;
+    display: block;
+}
+
+
+/*
+ * Nav elements
+ */
+
+#main-nav {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contents-nav {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        display: inline-block;
+        padding: 1em 3em;
+    }
+}
+    
+
+/*
+ * Title/header stuff
+ */
