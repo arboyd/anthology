@@ -1,27 +1,25 @@
-@import "compass/reset";
-
-
-/*
- * Variables: 
- *  colors: $primary, $pop, $pop2 $neutral, $darkneutral, $lightneutral
- *
- *
- */
-
+@import 'base';
 
 /*
  * Main layout stuff
  */
 body {
-    padding: 0;
-    margin: 0;
     font-family: 'Merriweather', Georgia, Times, 'Times New Roman', serif;
-    width: 100%;
+    background-color: none;
 }
 
+
 div {
-    margin: 0;
-    padding: 0;
+	&.container {
+		@include clearfix;
+		@include container;
+  
+  		&.open-menu {
+  		  background-color: orange;
+  		  transform: translate3d(span(3 wide), 0, 0);
+
+ 		}
+	}
 }
 
 h1, h2, h3, h4, h5 {
@@ -30,19 +28,30 @@ h1, h2, h3, h4, h5 {
 
 /* display on large screen only? */
 #header {
-	display: hidden; 
+
 }
 
 #content {
-    padding: 2em;
-    float: right;
-    display: block;
+	background-color: gray; 
+
+    padding: 0 gutter();
+    
+    img {
+    	max-width: 100%;	
+    	height: auto;
+    }
 }
 
 #sidebar {
-    padding: 2em;
-    float: left;
-    display: block;
+	background-color: purple;
+	position: absolute; 
+	width:  span(3 wide);
+    left: - span(3 wide);
+    top: 0;
+    bottom: 0;    
+}
+
+#footer {
 }
 
 
