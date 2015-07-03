@@ -3,9 +3,12 @@
 
 <?php get_sidebar(); ?>   
 
+
+<div class = "container">      
 <div id = "content">
      <h1 id = "menu-toggle">CLICK</h1>
-        
+
+  
     <h1>Main Area</h1>
         
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
