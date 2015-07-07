@@ -6,7 +6,6 @@
 
 <div class = "container">      
 <div id = "content">
-     <h1 id = "menu-toggle">CLICK</h1>
 
   
     <h1>Main Area</h1>

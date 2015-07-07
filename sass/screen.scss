@@ -21,13 +21,13 @@ h1, h2, h3, h4, h5 {
 
 /* display on large screen only? */
 #header {
-
+	display: none;
 }
 
 #content {
-	background-color: gray; 
+	background-color: $neutral; 
 
-    padding: 0 gutter();
+    padding: 3em;
     
     img {
     	max-width: 100%;	
@@ -36,16 +36,20 @@ h1, h2, h3, h4, h5 {
 }
 
 #sidebar {
-	background-color: purple;
 	position: absolute;
-	width: 30em;
+	display: -webkit-flex;
+  	display: flex;
+ 	-webkit-flex-wrap: wrap;
+  	flex-wrap: wrap;
+	width: 100%; //works for 30em or greater, needs a small screen fix
+	max-width: 20em;
     top: 0;
-    left: -3	0em; 
+    left: -20em; 
     transition: transform 0.3s ease;
+    
     
       
   	&.open {
-  	  background-color: orange;		
   	  transform: translate3d(0, 0, 0);
   	  left: 0;
 	}
@@ -57,16 +61,87 @@ h1, h2, h3, h4, h5 {
 
 
 /*
- * Nav elements
+ * Nav elements -- needs js fix for android and ie cf 
+ * http://alistapart.com/article/radio-controlled-web-design
  */
 
-#main-nav {
+#menu-nav, #contents-nav {
+  width: 100%;
+  margin-top: -1px;
+  border: 1px solid #ddd;
+  -webkit-order: 1;
+  order: 1;
+  display: none;
+  
+}
+
+#menu-tab, #contents-tab {
+	display: inline-block;
+	height: 3em;
+	width: 50%;
+	background-color: $pop;
+	padding: 0;
+	margin: 0;
+	color: white;
+	line-height: 3em;
+	text-align: center;
+	font-weight: bold;
+	
+	&:hover, &:active {
+		background-color: $light;
+	}
+}
+
+
+#menu:checked ~ #menu-tab, #contents:checked ~ #contents-tab{
+   	color: $dark;
+   	background-color: $primary;
+}
+
+#menu:checked ~ #menu-nav, #contents:checked ~ #contents-nav{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 20em;
+}
+
+
+#menu, #contents {
+    position: absolute;
+    left: -10000px;
+
+}
+
+
+#menu-nav {
+
+    ul {
+    	list-style: none;
+    	margin: 0;
+    	padding: 0;
+    }
+    
+    li {
+    	margin: 0;
+    	padding: 1em;
+    	display: block;
+    	background-color: $primary;
+    	width: 100%;
+    	border: black 1px solid;
+    	
+    	a {
+    		text-decoration: none;
+    		color: $dark;
+    	}
+    	
+    	&:hover, &:active{
+    		background-color: $pop;
+    	}
+	}
+	
+	
 }
 
 #contents-nav {
+	display: none;
     margin-left: auto;
     margin-right: auto;
 }
@@ -82,7 +157,28 @@ h1, h2, h3, h4, h5 {
     }
 }
     
+#menu-toggle {
+	position: absolute;
+	right: -1.5em;
+	background-color: $primary;
+	color: white;
+	display: block;
+	height: 1.5em;
+	width: 1.5em;
+	text-align: center;
+	line-height: 1.5em;
 
+	&:hover{
+		color: $pop;
+		background-color: $light;
+	}
+		
+	&.clicked {
+		background-color: $pop;
+		color: white;
+	}
+}    
+    
 /*
  * Title/header stuff
  */

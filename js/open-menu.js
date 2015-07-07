@@ -6,5 +6,6 @@ jQuery(document).ready(function($) {
   $menuToggle.on('click', function(event) {
     event.preventDefault();
     $sidebar.toggleClass('open');
+    $menuToggle.toggleClass('clicked');
   });
 });

@@ -5,6 +5,7 @@
 	<link href = "wp-content/themes/anthology/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<script src="wp-content/themes/anthology/js/jquery-1.11.3.js"></script>
 	<script src="wp-content/themes/anthology/js/open-menu.js"></script>
+	<link rel="stylesheet" href="wp-content/themes/anthology/font-awesome/css/font-awesome.min.css">
 	
 
 </head>
