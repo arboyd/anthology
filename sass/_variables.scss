@@ -25,5 +25,17 @@ $midneutral: #A0A394;
  
  /*
  * SPACIAL STUFF
+ * cf. https://css-tricks.com/media-queries-sass-3-2-and-codekit/
  */
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media (min-width: 1251px) { @content; }
+  }
+  @else if $point == medium {
+    @media (max-width: 1250px) { @content; }
+  }
+  @else if $point == small {
+    @media (max-width: 650px)  { @content; }
+  }
+}
  	

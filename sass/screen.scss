@@ -4,6 +4,7 @@
  * Main layout stuff
  */
 body {
+	background-color: $neutral; 
     font-family: $serif;
 }
 
@@ -12,6 +13,11 @@ div {
 	&.container {
 		@include clearfix;
 		@include container;
+		
+		
+    	
+    	
+    	display: block-inline;
 	}
 }
 
@@ -25,7 +31,6 @@ h1, h2, h3, h4, h5 {
 }
 
 #content {
-	background-color: $neutral; 
 
     padding: 3em;
     
@@ -33,19 +38,36 @@ h1, h2, h3, h4, h5 {
     	max-width: 100%;	
     	height: auto;
     }
+    
+    // kinda hacky -- fix later 
+   	@include breakpoint(large){
+    	position: absolute;
+    	left: 20em;
+    	right: 0;
+    	top:0;
+    }
 }
 
 #sidebar {
-	position: absolute;
 	display: -webkit-flex;
   	display: flex;
+  	margin: 0;
  	-webkit-flex-wrap: wrap;
   	flex-wrap: wrap;
-	width: 100%; //works for 30em or greater, needs a small screen fix
+	width: 100%;
 	max-width: 20em;
     top: 0;
-    left: -20em; 
+    @include breakpoint(small) { 
+    	left: -20em; 
+    	position: absolute;
+	}
+    @include breakpoint(medium) { 
+    	left: -20em; 
+		position: absolute;
+	}
+    
     transition: transform 0.3s ease;
+    font-family: $sans;
     
     
       
@@ -68,7 +90,6 @@ h1, h2, h3, h4, h5 {
 #menu-nav, #contents-nav {
   width: 100%;
   margin-top: -1px;
-  border: 1px solid #ddd;
   -webkit-order: 1;
   order: 1;
   display: none;
@@ -86,6 +107,7 @@ h1, h2, h3, h4, h5 {
 	line-height: 3em;
 	text-align: center;
 	font-weight: bold;
+	font-family: $serif;
 	
 	&:hover, &:active {
 		background-color: $light;
@@ -111,7 +133,7 @@ h1, h2, h3, h4, h5 {
 }
 
 
-#menu-nav {
+#menu-nav, #contents-nav {
 
     ul {
     	list-style: none;
@@ -125,7 +147,6 @@ h1, h2, h3, h4, h5 {
     	display: block;
     	background-color: $primary;
     	width: 100%;
-    	border: black 1px solid;
     	
     	a {
     		text-decoration: none;
@@ -133,7 +154,7 @@ h1, h2, h3, h4, h5 {
     	}
     	
     	&:hover, &:active{
-    		background-color: $pop;
+    		background-color: $light;
     	}
 	}
 	
@@ -167,9 +188,9 @@ h1, h2, h3, h4, h5 {
 	width: 1.5em;
 	text-align: center;
 	line-height: 1.5em;
-
+	@include breakpoint(large) { display: none; }
+	
 	&:hover{
-		color: $pop;
 		background-color: $light;
 	}
 		

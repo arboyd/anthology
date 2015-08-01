@@ -1,5 +1,7 @@
 <div id="sidebar">
-	
+
+
+	<!-- Could this use a similar CSS solution to tabs? -->	
      <i id = "menu-toggle" class="fa fa-bars fa-2x"></i>
      
 	<div class = "tabs">
