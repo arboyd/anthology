@@ -12,6 +12,7 @@
 body {
     background-color: $neutral; 
     font-family: $serif;
+    color: $verydarkneutral;
 }
 
 
@@ -34,6 +35,26 @@ div {
 
 h1, h2, h3, h4, h5 {
     font-family: $sans;
+    
+    a {
+        text-decoration: none; 
+        color: $primary;
+        font-family: $serif;
+        
+        &:hover{
+            color: $light;
+        }
+    }
+}
+
+a {
+    color: $pop;
+    text-decoration: none;
+    
+    &:hover {
+        color: $pop2;
+    }
+    
 }
 
 /* display on large screen only? */
@@ -42,12 +63,12 @@ h1, h2, h3, h4, h5 {
 }
 
 #content {
-
     padding: 3em;
     
     img {
-        max-width: 100%;    
+        width: auto !important; 
         height: auto;
+        padding: 1em;
     }
 
 }
@@ -119,7 +140,10 @@ h1, h2, h3, h4, h5 {
     text-align: center;
     font-weight: bold;
     font-family: $serif;
-
+    
+        &:hover{
+            background-color: $light;
+        }   
 }
 
 
@@ -220,3 +244,15 @@ h1, h2, h3, h4, h5 {
 /*
  * Title/header stuff
  */
+ 
+ 
+ /*
+  * Notes
+  */
+.note {
+    
+    border-left: 3px solid $pop;
+    margin: 2em;
+    padding-left: .5em;
+    color: $darkneutral; 
+}
