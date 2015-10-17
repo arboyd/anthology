@@ -35,11 +35,11 @@
 
  add_action( 'init', 'anthology_set_post_types' );
 
-function add_custom_meta_boxes() {
+function anthology_add_custom_meta_boxes() {
     add_meta_box('anthology_tei_attachment', 'TEI File', 'anthology_tei_attachment', 'work', 'normal', 'high');
 }
 
-add_action('add_meta_boxes', 'add_custom_meta_boxes');
+add_action('add_meta_boxes', 'anthology_add_custom_meta_boxes');
 
 /**
  * Allow XML uploads.
@@ -53,11 +53,35 @@ add_filter('upload_mimes', 'anthology_custom_upload_xml');
 
 /**
  * HTML for TEI file upload field.
+ * check if it has a file--list name of uploaded file, allow for delete
+ * allow multiple? not for the time being
+ * if file is uploaded, show name
+ * currently only allows only one file--new upload unlinks but does not delete 
  */
 function anthology_tei_attachment() {
+
+    $html .= '<p class="description">';
+
+
+    if (get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0] == ''){
+
+        $html .= 'Upload your TEI file.';
+
+    } else {
+        $html .= 'You have already uploaded a TEI file. Uploading a new file will replace it. Current file: <a href = "';
+         $html .=(get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0]).'">';
+        $html .= basename(get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0]).'</a><br />';
+    }
+
     wp_nonce_field(plugin_basename(__FILE__), 'anthology_tei_attachment_nonce');
-    $html = '<p class="description">';
-    $html .= 'Upload your TEI file.';
+//if file already exists : 
+    // $html .= 'Current TEI file:';
+    // $html .= $filename;
+    // $html .= 'Replace your TEI file.</p>';
+
+
+
+
     $html .= '</p>';
     $html .= '<input type="file" id="anthology_tei_attachment" name="anthology_tei_attachment" value="" size="25">';
     echo $html;
@@ -80,10 +104,11 @@ function anthology_save_custom_meta_data($id) {
                 wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
             } else {
                 update_post_meta($id, 'anthology_tei_attachment', $upload);
+                update_post_meta($id, 'anthology_tei_attachment_url', wp_upload_dir()['url'].'/'.basename($_FILES['anthology_tei_attachment']['name']));
             }
         }
         else {
-            wp_die("The file type that you've uploaded is not a PDF.");
+            wp_die("The file type that you've uploaded is not TEI/XML.");
         }
     }
 }
