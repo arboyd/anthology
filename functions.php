@@ -61,16 +61,15 @@ add_filter('upload_mimes', 'anthology_custom_upload_xml');
 function anthology_tei_attachment() {
 
     $html .= '<p class="description">';
-
-
+    $tei_file = get_post_meta( get_the_ID(), 'anthology_tei_attachment', true );
     if (get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0] == ''){
 
         $html .= 'Upload your TEI file.';
 
     } else {
-        $html .= 'You have already uploaded a TEI file. Uploading a new file will replace it. Current file: <a href = "';
-         $html .=(get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0]).'">';
-        $html .= basename(get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0]).'</a><br />';
+        $html .= 'You have already uploaded a TEI file. Uploading a new file will replace it. Current file: ';
+
+         $html .= '<a href="'.$tei_file['url'].'">'.basename($tei_file['url']).'</a>';
     }
 
     wp_nonce_field(plugin_basename(__FILE__), 'anthology_tei_attachment_nonce');
@@ -104,7 +103,7 @@ function anthology_save_custom_meta_data($id) {
                 wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
             } else {
                 update_post_meta($id, 'anthology_tei_attachment', $upload);
-                update_post_meta($id, 'anthology_tei_attachment_url', wp_upload_dir()['url'].'/'.basename($_FILES['anthology_tei_attachment']['name']));
+               // update_post_meta($id, 'anthology_tei_attachment_url', wp_upload_dir()['url'].'/'.basename($_FILES['anthology_tei_attachment']['name']));
             }
         }
         else {
