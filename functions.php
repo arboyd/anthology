@@ -73,12 +73,6 @@ function anthology_tei_attachment() {
     }
 
     wp_nonce_field(plugin_basename(__FILE__), 'anthology_tei_attachment_nonce');
-//if file already exists : 
-    // $html .= 'Current TEI file:';
-    // $html .= $filename;
-    // $html .= 'Replace your TEI file.</p>';
-
-
 
 
     $html .= '</p>';
@@ -99,9 +93,15 @@ function anthology_save_custom_meta_data($id) {
 
         if(in_array($uploaded_type, $supported_types)) {
             $upload = wp_upload_bits($_FILES['anthology_tei_attachment']['name'], null, file_get_contents($_FILES['anthology_tei_attachment']['tmp_name']));
+       
             if(isset($upload['error']) && $upload['error'] != 0) {
                 wp_die('There was an error uploading your file. The error is: ' . $upload['error']);
             } else {
+
+                /**   if (get_post_meta(get_the_ID(), anthology_tei_attachment_url)[0] != ''){
+                    unlink( $upload[anthology_tei_attachment_url)[0]] );
+                } */
+
                 update_post_meta($id, 'anthology_tei_attachment', $upload);
                // update_post_meta($id, 'anthology_tei_attachment_url', wp_upload_dir()['url'].'/'.basename($_FILES['anthology_tei_attachment']['name']));
             }
