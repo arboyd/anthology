@@ -718,7 +718,7 @@ a:hover {
 }
 /* line 69, ../sass/screen.scss */
 #content img {
-  width: auto !important;
+  max-width: 100%;
   height: auto;
   padding: 1em;
 }

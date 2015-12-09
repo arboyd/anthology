@@ -67,7 +67,7 @@ a {
     padding: 3em;
     
     img {
-        width: auto !important; 
+        max-width: 100%; 
         height: auto;
         padding: 1em;
     }
@@ -257,3 +257,4 @@ a {
     padding-left: .5em;
     color: $darkneutral; 
 }
+
