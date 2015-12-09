@@ -14,7 +14,7 @@
 		--><label for="contents" id = "contents-tab">Contents</label>
 	    <div id = "menu-nav">
 			<ul>
-				<?php wp_list_cats('sort_column=name&optioncount=1&hierarchical=0'); ?>
+				<?php wp_list_cats('sort_column=name&optioncount=1&hierarchical=0'); ?> <!--test placeholder in lieu of menu--> 
 			</ul>
 				
 		</div>
@@ -24,7 +24,7 @@
 	
 	<!-- <h2><?php _e('Archives'); ?></h2> -->
 	<ul>
-		<?php wp_get_archives('type=monthly'); ?>
+		<?php wp_get_archives('type=monthly'); ?> <!--test placeholder in lieu of having an archive of works-->
 	</ul>
 	</div>	
 

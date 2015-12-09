@@ -16,7 +16,7 @@
  * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
  * body `font-size` is set using `em` units.
  */
-/* line 106, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.5em;
@@ -606,7 +606,7 @@ th {
   padding: 0;
 }
 
-/* line 21, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.5/sass/susy/language/susy/_box-sizing.scss */
+/* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.7/sass/susy/language/susy/_box-sizing.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -664,7 +664,7 @@ div.container {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.5/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/susy-2.2.7/sass/susy/output/support/_clearfix.scss */
 div.container:after {
   content: " ";
   display: block;
@@ -689,40 +689,41 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
   text-decoration: none;
   color: #3E687E;
   font-family: "Merriweather", Georgia, Times, "Times New Roman", serif;
+  letter-spacing: .1em;
 }
-/* line 44, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
   color: #89B0C8;
 }
 
-/* line 50, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 a {
   color: #A35E02;
   text-decoration: none;
 }
-/* line 54, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 a:hover {
   color: #A51200;
 }
 
 /* display on large screen only? */
-/* line 61, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 #header {
   display: none;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 #content {
   padding: 3em;
 }
-/* line 68, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 #content img {
   width: auto !important;
   height: auto;
   padding: 1em;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #sidebar {
   display: -webkit-flex;
   display: flex;
@@ -736,26 +737,26 @@ a:hover {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 @media (max-width: 650px) {
-  /* line 76, ../sass/screen.scss */
+  /* line 77, ../sass/screen.scss */
   #sidebar {
     left: -20em;
     position: absolute;
   }
 }
 @media (max-width: 1250px) {
-  /* line 76, ../sass/screen.scss */
+  /* line 77, ../sass/screen.scss */
   #sidebar {
     left: -20em;
     position: absolute;
   }
 }
 @media (min-width: 1251px) {
-  /* line 76, ../sass/screen.scss */
+  /* line 77, ../sass/screen.scss */
   #sidebar {
     left: 0;
   }
 }
-/* line 103, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #sidebar.open {
   transform: translate3d(0, 0, 0);
   left: 0;
@@ -765,7 +766,7 @@ a:hover {
  * Nav elements -- needs js fix for android and ie cf 
  * http://alistapart.com/article/radio-controlled-web-design
  */
-/* line 119, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 #menu-nav, #contents-nav {
   width: 100%;
   margin-top: -1px;
@@ -775,7 +776,7 @@ a:hover {
   text-transform: uppercase;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 #menu-tab, #contents-tab {
   display: inline-block;
   letter-spacing: .1em;
@@ -790,36 +791,36 @@ a:hover {
   font-weight: bold;
   font-family: "Merriweather", Georgia, Times, "Times New Roman", serif;
 }
-/* line 144, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 #menu-tab:hover, #contents-tab:hover {
   background-color: #89B0C8;
 }
 
-/* line 150, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 #menu:checked ~ #menu-tab, #contents:checked ~ #contents-tab {
   color: white;
   background-color: #3E687E;
 }
 
-/* line 155, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #menu:checked ~ #menu-nav, #contents:checked ~ #contents-nav {
   display: block;
   width: 20em;
 }
 
-/* line 161, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 #menu, #contents {
   position: absolute;
   left: -10000px;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 #menu-nav ul, #contents-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 176, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 #menu-nav li, #contents-nav li {
   margin: 0;
   padding: 1em;
@@ -830,42 +831,42 @@ a:hover {
   color: white;
   border-bottom: solid #89B0C8 1px;
 }
-/* line 186, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 #menu-nav li a, #contents-nav li a {
   text-decoration: none;
   letter-spacing: .2em;
   color: white;
 }
-/* line 192, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 #menu-nav li:hover, #menu-nav li:active, #contents-nav li:hover, #contents-nav li:active {
   background-color: #89B0C8;
   color: #0F1B23;
 }
-/* line 196, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 #menu-nav li:hover a, #menu-nav li:active a, #contents-nav li:hover a, #contents-nav li:active a {
   color: #0F1B23;
 }
 
-/* line 205, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 #contents-nav {
   display: none;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 .nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 216, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 .nav-list li {
   display: inline-block;
   padding: 1em 3em;
 }
 
-/* line 222, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 #menu-toggle {
   position: absolute;
   right: -1.5em;
@@ -878,16 +879,16 @@ a:hover {
   line-height: 1.5em;
 }
 @media (min-width: 1251px) {
-  /* line 222, ../sass/screen.scss */
+  /* line 223, ../sass/screen.scss */
   #menu-toggle {
     display: none;
   }
 }
-/* line 234, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #menu-toggle:hover {
   background-color: #89B0C8;
 }
-/* line 238, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 #menu-toggle.clicked {
   background-color: #A35E02;
   color: white;
@@ -899,7 +900,7 @@ a:hover {
 /*
  * Notes
  */
-/* line 252, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 .note {
   border-left: 3px solid #A35E02;
   margin: 2em;

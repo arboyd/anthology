@@ -6,11 +6,7 @@
 
 <div class = "container">
 <div id = "content">
-
-
-    <h1>Main Area</h1>
-
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
         <h1><a href="<?php the_permalink() ?>" rel="bookmark"
